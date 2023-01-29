@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/widgets/category_card.dart';
 import './dummydata.dart';
 class CategoryScreen extends StatelessWidget {
+  static const ROUTE_NAME = '/Categories';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
 
-      appBar: AppBar(
-        title: const Text('Meals App'),
 
-      ),
       body: GridView(
           padding: const EdgeInsets.all(10),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(

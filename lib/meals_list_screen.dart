@@ -3,7 +3,7 @@ import 'package:meals_app/widgets/meal_card.dart';
 import './dummydata.dart';
 
 class MealsListScreen extends StatelessWidget {
-  static const ROUTE_NAME = 'meals-list';
+  static const ROUTE_NAME = '/meals-list';
   @override
   Widget build(BuildContext context) {
     final routeData =

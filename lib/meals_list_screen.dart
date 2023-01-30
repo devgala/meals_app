@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/models/meal.dart';
 import 'package:meals_app/widgets/meal_card.dart';
 import './dummydata.dart';
 
-class MealsListScreen extends StatelessWidget {
+class MealsListScreen extends StatefulWidget {
   static const ROUTE_NAME = '/meals-list';
+  final List<Meal> filteredMeals;
+  MealsListScreen(this.filteredMeals);
+  @override
+  State<MealsListScreen> createState() => _MealsListScreenState();
+}
+
+class _MealsListScreenState extends State<MealsListScreen> {
   @override
   Widget build(BuildContext context) {
     final routeData =
@@ -11,7 +19,7 @@ class MealsListScreen extends StatelessWidget {
     final title = routeData['title'];
     final id = routeData['id'];
     final appBarColor = routeData['color'];
-    final filteredList = DUMMY_MEALS
+    final filteredList = widget.filteredMeals
         .where((element) => element.categories.contains(id))
         .toList();
     return Scaffold(
